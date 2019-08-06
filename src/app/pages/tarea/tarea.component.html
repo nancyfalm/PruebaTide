@@ -1,0 +1,42 @@
+<h1>Nueva tarea</h1>
+
+
+<div class="row">
+    <label class="col-md-6 text-right">
+      <input class="btn btn-danger" routerLink="/tareas" type="submit" value="Volver">
+    </label>
+</div>
+
+<form (ngSubmit)="guardarTarea ( f )" #f="ngForm">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label >Id</label>
+            <input type="text" class="form-control" name="id" [(ngModel)]="tarea.id" placeholder="id" required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label >Nombre de la tarea</label>
+            <input type="text" class="form-control" name="nombre" [(ngModel)]="tarea.name" placeholder="Nombre de la tarea">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="">Fecha de creación</label>
+            <input type="datetime-local" class="form-control" name="fechaCreacion"  [(ngModel)]="tarea.creationDate" placeholder="Fecha creación">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="">Fecha límite para su realización</label>
+            <input type="datetime-local" class="form-control" id="" name="fechaLimite"  [(ngModel)]="tarea.limitDate" placeholder="Fecha limite">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="">Fecha de entrega.</label>
+            <input type="datetime-local" class="form-control" id="" name="fechaEntrega"  [(ngModel)]="tarea.endDate" placeholder="Fecha entrega">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
